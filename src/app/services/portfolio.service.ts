@@ -69,6 +69,15 @@ portfolioitems: any = [
     description: 'This Webapp shows Real-Time rates of Gold and Silver. It is purely made for retailers for increasing Customer Relations.',
     tags: [ 'Javascript', 'API', 'HTML5', 'CSS']
   },
+    {
+    mainImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/scheme.png",
+    backgroundImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/scheme.png",
+    // gitLink: 'https://github.com/christian-hansen/ng-weather',
+    // liveLink: 'https://weather.christian-hansen.dev/',
+    title: '11+1 Gold scheme',
+    description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
+    tags: [ 'Javascript','Appscript', 'API', 'HTML5', 'CSS']
+  },
   // {
   //   mainImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/crm.png",
   //   backgroundImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/simple-crm.png",

@@ -71,7 +71,7 @@ portfolioitems: any = [
   },
     {
     mainImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/scheme.png",
-    backgroundImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/scheme.png",
+    backgroundImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/scheme_00.png",
     // gitLink: 'https://github.com/christian-hansen/ng-weather',
     // liveLink: 'https://weather.christian-hansen.dev/',
     title: '11+1 Gold scheme',

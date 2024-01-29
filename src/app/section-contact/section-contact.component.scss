@@ -35,18 +35,18 @@ app-contact-form {
   cursor: pointer;
 
   div {
-    background: url("/assets/img/icons/up-btn.png");
+    background: url("https://shubhsonidev.github.io/portfolio/assets/img/icons/up-btn.png");
     background-repeat: no-repeat;
     width: 39px;
     height: 39px;
 
     &:hover {
-      background: url("/assets/img/icons/up-btn-green.png");
+      background: url("https://shubhsonidev.github.io/portfolio/assets/img/icons/up-btn-green.png");
       background-repeat: no-repeat;
     }
 
     &:active {
-      background: url("/assets/img/icons/up-btn.png");
+      background: url("https://shubhsonidev.github.io/portfolio/assets/img/icons/up-btn.png");
       background-repeat: no-repeat;
     }
   }

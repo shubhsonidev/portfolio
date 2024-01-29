@@ -7,8 +7,8 @@ export class PortfolioService {
 portfolioitems: any = [
   
   {
-    mainImage: "/assets/img/portfolio/byajbook_webapp.png",
-    backgroundImage: "/assets/img/portfolio/byajbook_00.png",
+    mainImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/byajbook_webapp.png",
+    backgroundImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/byajbook_00.png",
     // gitLink: 'https://github.com/christian-hansen/join-app',
     // liveLink: 'https://christian-hansen.developerakademie.net/join/',
     title: 'Byajbook Webapp',
@@ -16,8 +16,8 @@ portfolioitems: any = [
     tags: ['Angular','Typescript', 'HTML', 'CSS']
   },
   {
-    mainImage: "/assets/img/portfolio/fivefilter_website.png",
-    backgroundImage: "/assets/img/portfolio/fivefilter_00.png",
+    mainImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/fivefilter_website.png",
+    backgroundImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/fivefilter_00.png",
     // gitLink: 'https://github.com/christian-hansen/el-pollo-loco',
     // liveLink: 'https://christian-hansen.developerakademie.net/elpolloloco/',
     title: 'FiveFiter eSports Website',
@@ -25,8 +25,8 @@ portfolioitems: any = [
     tags: ['Angular', 'HTML', 'CSS']
   },
   {
-    mainImage: "/assets/img/portfolio/byajbook_website.png",
-    backgroundImage: "/assets/img/portfolio/byajbook_01.png",
+    mainImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/byajbook_website.png",
+    backgroundImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/byajbook_01.png",
     // gitLink: 'https://github.com/christian-hansen/portfolio-website',
     // liveLink: 'https://www.christian-hansen.dev',
     title: 'Byajbook Website',
@@ -34,8 +34,8 @@ portfolioitems: any = [
     tags: ['Angular', 'Typescript', 'HTML', 'CSS']
   },
     {
-    mainImage: "/assets/img/portfolio/fivefilter_webapp.png",
-    backgroundImage: "/assets/img/portfolio/fivefilter_01.png",
+    mainImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/fivefilter_webapp.png",
+    backgroundImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/fivefilter_01.png",
     // gitLink: 'https://github.com/christian-hansen/ng-weather',
     // liveLink: 'https://weather.christian-hansen.dev/',
     title: 'eSports Tournament manager',
@@ -43,8 +43,8 @@ portfolioitems: any = [
     tags: ['Angular', 'Typescript', 'API', 'Discord Bots']
   },
     {
-    mainImage: "/assets/img/portfolio/mahi925_website.png",
-    backgroundImage: "/assets/img/portfolio/mahi925_00.png",
+    mainImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/mahi925_website.png",
+    backgroundImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/mahi925_00.png",
     // gitLink: 'https://github.com/christian-hansen/ng-weather',
     // liveLink: 'https://weather.christian-hansen.dev/',
     title: 'Mahi925 Silver Website',
@@ -52,8 +52,8 @@ portfolioitems: any = [
     tags: ['Angular', 'HTML', 'CSS']
   },
     {
-    mainImage: "/assets/img/portfolio/portfolio.png",
-    backgroundImage: "/assets/img/portfolio/port.png",
+    mainImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/portfolio.png",
+    backgroundImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/port.png",
     // gitLink: 'https://github.com/christian-hansen/ng-weather',
     // liveLink: 'https://weather.christian-hansen.dev/',
     title: 'Portfolio',
@@ -61,8 +61,8 @@ portfolioitems: any = [
     tags: ['Angular', 'Typescript', 'API', 'HTML', 'CSS']
   },
     {
-    mainImage: "/assets/img/portfolio/ratechecker.png",
-    backgroundImage: "/assets/img/portfolio/rate.png",
+    mainImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/ratechecker.png",
+    backgroundImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/rate.png",
     // gitLink: 'https://github.com/christian-hansen/ng-weather',
     // liveLink: 'https://weather.christian-hansen.dev/',
     title: 'GOLD & SILVER RATES WEBAPP',
@@ -70,8 +70,8 @@ portfolioitems: any = [
     tags: [ 'Javascript', 'API', 'HTML5', 'CSS']
   },
   // {
-  //   mainImage: "/assets/img/portfolio/crm.png",
-  //   backgroundImage: "/assets/img/portfolio/simple-crm.png",
+  //   mainImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/crm.png",
+  //   backgroundImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/simple-crm.png",
   //   gitLink: 'https://github.com/christian-hansen/simple-crm',
   //   liveLink: 'https://github.com/christian-hansen/simple-crm',
   //   title: 'Simple CRM',
@@ -79,8 +79,8 @@ portfolioitems: any = [
   //   tags: ['Angular', 'Typescript', 'Firebase', 'HTML', 'CSS', 'Material Design']
   // },
   // {
-  //   mainImage: "/assets/img/portfolio/crm.png",
-  //   backgroundImage: "/assets/img/portfolio/crm.png",
+  //   mainImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/crm.png",
+  //   backgroundImage: "https://shubhsonidev.github.io/portfolio/assets/img/portfolio/crm.png",
   //   gitLink: 'https://www.github.com/christian-hansen/',
   //   liveLink: 'https://www.hansen-net.de/projekte',
   //   title: 'Simple CRM TBD',

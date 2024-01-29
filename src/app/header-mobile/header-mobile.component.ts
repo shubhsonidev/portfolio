@@ -20,8 +20,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 export class HeaderMobileComponent {
   displayMobileNav = false;
-  iconMenu: string = '/assets/img/icons/mobile-menu.png';
-  iconClose: string = '/assets/img/icons/mobilemenu-close-final.png';
+  iconMenu: string = 'https://shubhsonidev.github.io/portfolio/assets/img/icons/mobile-menu.png';
+  iconClose: string = 'https://shubhsonidev.github.io/portfolio/assets/img/icons/mobilemenu-close-final.png';
   iconHeader: any = this.iconMenu;
 
   constructor(private scrollService: ScrollService, private imprintService: ImprintService) {}

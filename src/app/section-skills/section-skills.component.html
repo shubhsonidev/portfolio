@@ -1,0 +1,24 @@
+<div class="line-skills" data-aos="fade-zoom-in-right"
+data-aos-easing="ease-in"
+data-aos-offset="0"
+data-aos-delay="1000"></div>
+<div #skillsSection class="skills-container" data-aos="fade-up" data-aos-duration="1000">
+    
+    <div class="skills-intro" >
+        <h2>My skills</h2>
+        <div>I have gained experience in building projects with various front end technologies and concepts.</div>
+        <div class="btn-container hidemobile">
+            <button class="main-btn" (click)="scrollToContact()">Get in touch</button>
+          </div>
+    </div>
+    <div class="skills-icons-container" data-aos="fade-up" data-aos-duration="1000">
+        <div class="skill-item" *ngFor="let skill of skills">
+            <img src="{{ skill['logo'] }}" alt="{{ skill['description'] }} icon">
+            <div>{{ skill['description'] }}</div>
+        </div>
+    </div>
+    <div class="btn-container hidedesktop">
+        <button class="main-btn" (click)="scrollToContact()">Get in touch</button>
+      </div>
+      <img class="skills-bg-form" src="/assets/img/bg/blue-shadow-left.png">
+</div>

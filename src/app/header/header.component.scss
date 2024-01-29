@@ -1,0 +1,33 @@
+@use "/src/styles.scss";
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 37px 100px;
+  width: calc(100% - 200px);
+  background-color: var(--color-darkbluebg);
+
+  position:fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 10;
+}
+
+.nav-items {
+  display: flex;
+  gap: 29px;
+  font-size: 23px;
+
+  div {
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+  }
+}
+
+

@@ -1,0 +1,5 @@
+<div class="mobileheader">
+    <div class="logo pointer" (click)="scrollToTop()"><div>Shub<span class="second">h</span></div><div>Soni</div> </div>
+    <img id="menuicon" src={{iconHeader}} (click)="toggleMobileNav()">
+</div> 
+<app-mobilenav [@fadeIn]="displayMobileNav" (linkClick)="closeMobileNav()"></app-mobilenav>

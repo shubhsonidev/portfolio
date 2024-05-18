@@ -104,6 +104,17 @@ export class PortfolioService {
       // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
       tags: ['Javascript', 'React', 'API', 'HTML5', 'CSS'],
     },
+    {
+      mainImage:
+        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/limo.png',
+      backgroundImage:
+        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/liback.png',
+      // gitLink: 'https://github.com/christian-hansen/ng-weather',
+      // liveLink: 'https://weather.christian-hansen.dev/',
+      title: 'Linkerly',
+      // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
+      tags: ['Angular', 'API', 'HTML5', 'CSS'],
+    },
   ];
   constructor() {}
 

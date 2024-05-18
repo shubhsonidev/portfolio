@@ -37,7 +37,6 @@ export class SkillsService {
       logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/material-design-big.png',
       description: 'Material Design',
     },
-    // {logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/bootstrap.svg',description: 'Bootstrap'},
     {
       logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/git.png',
       description: 'GIT',
@@ -49,10 +48,6 @@ export class SkillsService {
     {
       logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/appscript.png',
       description: 'App Script',
-    },
-    {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/c++.png',
-      description: 'C++',
     },
   ];
 

@@ -106,7 +106,7 @@ export class PortfolioService {
     },
     {
       mainImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/limo.jpg',
+        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/limo.png',
       backgroundImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/libac.png',
       // gitLink: 'https://github.com/christian-hansen/ng-weather',

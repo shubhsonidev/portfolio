@@ -46,7 +46,7 @@ showSuccess: boolean = false;
     //senden
     this.http
     .get<any>(
-      'https://script.google.com/macros/s/AKfycbxXC-BrkjNB3G86kGqVw04veZa1F5St40T89PgmclU7UrFu62vK70JhvnvWF0rCjPLE/exec?name='+this.inputData.inputName +'&email='+this.inputData.inputEmail+'&message=' + this.inputData.inputMessage,
+      'https://script.google.com/macros/s/AKfycbxaUgg165sluXC1sf4NRnodxlam5q2P57imVoZUWDvm3uBAgziyooW9lFuj-X1wyXkH/exec?name='+this.inputData.inputName +'&email='+this.inputData.inputEmail+'&message=' + this.inputData.inputMessage,
     )
     .subscribe((res) => {
       this.showSuccess = true;

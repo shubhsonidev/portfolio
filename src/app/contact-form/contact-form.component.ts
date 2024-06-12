@@ -47,7 +47,7 @@ export class ContactFormComponent {
     //senden
     this.http
       .get<any>(
-        'https://script.google.com/macros/s/AKfycbwIJMNHNijfjGHm9JDJm6QQqnUYNvrCjk2dw4kBI3Bx6cc03f9NvWHdKhmhmzk6O2-u/exec?name=' +
+        'https://script.google.com/macros/s/AKfycbxz-GtXjXQVVIpzNTppet2k6VCt75kjClwDyqVw-42HhLJXwn-ddUjuJPNzpZswkohq/exec?name=' +
           this.inputData.inputName +
           '&email=' +
           this.inputData.inputEmail +

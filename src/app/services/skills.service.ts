@@ -14,6 +14,19 @@ export class SkillsService {
       description: 'React',
     },
     {
+      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/node.png',
+      description: 'Node.js',
+    },
+    {
+      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/express.png',
+      description: 'Express.js',
+    },
+    {
+      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/mongodb.png',
+      description: 'MongoDB',
+    },
+
+    {
       logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/typescript-big.png',
       description: 'Typescript',
     },

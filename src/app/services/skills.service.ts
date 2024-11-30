@@ -22,10 +22,13 @@ export class SkillsService {
       description: 'Express.js',
     },
     {
+      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/redux.png',
+      description: 'Redux.js',
+    },
+    {
       logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/mongodb.png',
       description: 'MongoDB',
     },
-
     {
       logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/typescript-big.png',
       description: 'Typescript',

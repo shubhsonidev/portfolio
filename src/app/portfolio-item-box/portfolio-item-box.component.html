@@ -1,26 +1,54 @@
-<div class="portfolio-item">
+<div>
+  <div class="portfolio-item">
     <!-- Portfolio item default view -->
-    <img id="portfolioitem{{index}}" (mouseover)="openPortfolioItem(index)" class="portfolio-image fade-in" src="{{ portfolioItem.mainImage }}"
-        alt="{{ portfolioItem['title'] }} image">
+    <img
+      id="portfolioitem{{ index }}"
+      (mouseover)="openPortfolioItem(index)"
+      class="portfolio-image fade-in"
+      src="{{ portfolioItem.mainImage }}"
+      alt="{{ portfolioItem['title'] }} image"
+    />
 
     <!-- Portfolio item detailed view -->
-    <div id="portfolioitemdetail{{index}}" (mouseleave)="closePortfolioItem(index)" class="portfolio-item-detail d-none fade-in"
-        style="background-image: url({{ portfolioItem.backgroundImage }}); background-position: top; background-size: contain; filter: brightness(100%)">
-        <div class="background-container"></div>
-        <div class="btn-container">
-            <!-- <a href="{{ portfolioItem.gitLink }}" target="_blank"><button
-                    class="secondary-btn">Github</button></a>
-            <a href="{{ portfolioItem.liveLink }}" target="_blank"><button class="tertiary-btn">Live
-                    test</button></a> -->
-        </div>
-        <div class="infos-container">
-            <h4 style="text-align: center;">{{ portfolioItem.title }}</h4>
-            <p>{{ portfolioItem.description }}</p>
-            <div class="tag-container">
-                <div *ngFor="let tag of portfolioItem.tags; let j = index">{{tag}}
-                    <span *ngIf="j < portfolioItem.tags.length - 1"> |</span>
-                </div>
-            </div>
-        </div>
+    <!-- <div
+      id="portfolioitemdetail{{ index }}"
+      (mouseleave)="closePortfolioItem(index)"
+      class="portfolio-item-detail d-none fade-in"
+      style="background-image: url({{
+        portfolioItem.backgroundImage
+      }}); background-position: top; background-size: contain; filter: brightness(100%)"
+    >
+      <div class="background-container"></div>
+    </div> -->
+  </div>
+  <div class="infos-container">
+    <h3 style="text-align: center; line-height: 2rem">
+      {{ portfolioItem.title }}
+    </h3>
+
+    <!-- <p>{{ portfolioItem.description }}</p> -->
+    <!-- <div class="tag-container">
+      <div *ngFor="let tag of portfolioItem.tags; let j = index">
+        {{ tag }}
+        <span *ngIf="j < portfolioItem.tags.length - 1"> |</span>
+      </div>
+    </div> -->
+    <div class="btn-container" style="gap: 1rem">
+      <a
+        *ngIf="portfolioItem.gitLink"
+        [href]="portfolioItem.gitLink"
+        target="_blank"
+      >
+        <button class="secondary-btn">Github</button>
+      </a>
+
+      <a
+        *ngIf="portfolioItem.liveLink"
+        [href]="portfolioItem.liveLink"
+        target="_blank"
+      >
+        <button class="tertiary-btn">Live Link</button>
+      </a>
     </div>
+  </div>
 </div>

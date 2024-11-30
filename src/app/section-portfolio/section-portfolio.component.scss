@@ -18,7 +18,6 @@
     flex-direction: column;
     text-align: center;
     gap: 16px;
-    
 
     p {
       margin: 0;
@@ -33,15 +32,13 @@
   align-items: center;
   padding: 0px;
   gap: 25px;
-  margin-bottom: 80px;
+  // margin-bottom: 80px;
   width: 100%;
-  
 
   @media (min-width: 750px) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
   }
 
   @media (min-width: 1440px) {
@@ -100,8 +97,8 @@
 
 @media (min-width: 1200px) {
   .portfolio-intro-container {
-  div {
-gap: 8px;
+    div {
+      gap: 8px;
+    }
   }
-}
 }

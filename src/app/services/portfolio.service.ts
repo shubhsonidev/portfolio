@@ -7,6 +7,19 @@ export class PortfolioService {
   portfolioitems: any = [
     {
       mainImage:
+        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/jewel.png',
+      // backgroundImage:
+      //   'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/libac.png',
+      // gitLink: 'https://github.com/shubhsonidev/linkerly',
+      // liveLink: 'https://jewe-billing-backend.vercel.app/',
+      backendLink: 'https://jewe-billing-backend.vercel.app/',
+      docs: 'https://jewe-billing-backend.vercel.app/',
+      title: 'JEWELERA - Jewellery billing backend',
+      // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
+      tags: ['Angular', 'API', 'HTML5', 'CSS'],
+    },
+    {
+      mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/gappemaro.png',
       // backgroundImage:
       //   'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/libac.png',
@@ -23,7 +36,7 @@ export class PortfolioService {
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/libac.png',
       gitLink: 'https://github.com/shubhsonidev/linkerly',
       liveLink: 'https://linkerly.netlify.app/main',
-      title: 'Linkerly: Link Shortening Service',
+      title: 'Linkerl - Link Shortening Service',
       // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
       tags: ['Angular', 'API', 'HTML5', 'CSS'],
     },
@@ -34,7 +47,7 @@ export class PortfolioService {
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/tech1.png',
       gitLink: 'https://github.com/shubhsonidev/techshorts',
       liveLink: 'https://techieshorts.netlify.app/',
-      title: 'TechShorts',
+      title: 'TechShorts - 20 words news',
       // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
       tags: ['Javascript', 'React', 'API', 'HTML5', 'CSS'],
     },

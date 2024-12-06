@@ -22,7 +22,7 @@
     </div> -->
   </div>
   <div class="infos-container">
-    <h3 style="text-align: center; line-height: 2rem; ">
+    <h3 style="text-align: center; line-height: 2rem">
       {{ portfolioItem.title }}
     </h3>
 
@@ -40,6 +40,14 @@
         target="_blank"
       >
         <button class="secondary-btn">Github</button>
+      </a>
+
+      <a
+        *ngIf="portfolioItem.backendLink"
+        [href]="portfolioItem.backendLink"
+        target="_blank"
+      >
+        <button class="tertiary-btn">Backend Live</button>
       </a>
 
       <a

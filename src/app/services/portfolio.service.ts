@@ -7,13 +7,24 @@ export class PortfolioService {
   portfolioitems: any = [
     {
       mainImage:
+        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/docit.png',
+      // backgroundImage:
+      //   'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/libac.png',
+      // gitLink: 'https://github.com/shubhsonidev/linkerly',
+      liveLink: 'https://documentit.netlify.app/',
+      // backendLink: 'https://jewe-billing-backend.vercel.app/',
+      title: 'DOCIT- No Code Documentation Webapp',
+      // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
+      tags: ['Angular', 'API', 'HTML5', 'CSS'],
+    },
+    {
+      mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/jewel.png',
       // backgroundImage:
       //   'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/libac.png',
       // gitLink: 'https://github.com/shubhsonidev/linkerly',
       // liveLink: 'https://jewe-billing-backend.vercel.app/',
       backendLink: 'https://jewe-billing-backend.vercel.app/',
-      docs: 'https://jewe-billing-backend.vercel.app/',
       title: 'JEWELERA - Jewellery billing backend',
       // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
       tags: ['Angular', 'API', 'HTML5', 'CSS'],

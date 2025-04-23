@@ -57,6 +57,13 @@
       >
         <button class="tertiary-btn">Live Link</button>
       </a>
+      <a
+        *ngIf="portfolioItem.contact"
+        (click)="scrollToContact()"
+        target="_blank"
+      >
+        <button class="tertiary-btn">Contact For Demo</button>
+      </a>
     </div>
   </div>
 </div>

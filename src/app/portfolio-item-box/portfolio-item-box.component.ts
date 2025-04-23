@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PortfolioService } from '../services/portfolio.service';
+import { ScrollService } from '../services/scroll.service';
 
 @Component({
   selector: 'app-portfolio-item-box',
   templateUrl: './portfolio-item-box.component.html',
-  styleUrls: ['./portfolio-item-box.component.scss']
+  styleUrls: ['./portfolio-item-box.component.scss'],
 })
 export class PortfolioItemBoxComponent implements OnInit {
   @Input() portfolioItem: any;
@@ -12,7 +13,13 @@ export class PortfolioItemBoxComponent implements OnInit {
 
   portfolioItems: any = [];
 
-  constructor(private portfolioService: PortfolioService) {}
+  constructor(
+    private portfolioService: PortfolioService,
+    private scrollService: ScrollService
+  ) {}
+  scrollToContact(): void {
+    this.scrollService.scrollToContact();
+  }
 
   ngOnInit(): void {
     this.portfolioItems = this.portfolioService.getPortfolio();

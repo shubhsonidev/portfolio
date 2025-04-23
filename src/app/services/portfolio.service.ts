@@ -18,6 +18,15 @@ export class PortfolioService {
     },
     {
       mainImage:
+        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/loyalty.jpeg',
+
+      title: 'Loyalty Management',
+      contact: true,
+      // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
+      tags: ['Angular', 'API', 'HTML5', 'CSS'],
+    },
+    {
+      mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/docit.png',
       // backgroundImage:
       //   'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/libac.png',
@@ -51,6 +60,7 @@ export class PortfolioService {
       // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
       tags: ['Angular', 'API', 'HTML5', 'CSS'],
     },
+
     {
       mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/limo.png',

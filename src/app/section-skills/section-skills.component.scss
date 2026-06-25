@@ -33,51 +33,85 @@
   }
 }
 
-.skills-icons-container {
+.skills-categories-container {
   margin-top: 65px;
   margin-bottom: 65px;
   display: flex;
-  flex-wrap: wrap;
-  padding: 0 100px;
-  // flex-direction: column;
-
-  gap: 60px;
-  padding: 0px;
+  flex-direction: column;
+  gap: 40px;
   width: 100%;
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+    gap: 30px;
+  }
+
   @media (min-width: 1200px) {
-    width: calc(60% - 100px);
-    row-gap: 120px;
-    column-gap: 54px;
+    width: 55%;
+    gap: 40px;
   }
 }
 
-.skill-item {
-  text-align: center;
-  font-size: var(--font5);
+.skill-category {
+  flex: 1;
+  min-width: 0;
+  padding: 24px;
+  background: var(--color-bg-elevated, #12121a);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.06));
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    border-color: rgba(99, 102, 241, 0.25);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+  }
+}
+
+.category-title {
+  font-size: 1rem;
   font-weight: 700;
+  color: var(--color-primary, #818cf8);
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.8rem;
+}
 
+.category-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--color-secondary, #6366f1);
+  margin-bottom: 16px;
+  border-radius: 2px;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  height: 100px;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
   gap: 10px;
-  width: calc(33% - 40px);
+}
 
-  img {
-    height: 45px;
+.skill-list-item {
+  font-size: 0.95rem;
+  color: var(--color-text-primary, #e4e4e7);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--color-border, rgba(255, 255, 255, 0.06));
+  transition: all 0.2s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 
-    &:hover {
-      animation: rotate-center 0.8s ease-in-out both;
-    }
+  &:last-child {
+    border-bottom: none;
   }
 
-  @media (min-width: 1200px) {
-    width: calc(25% - 60px);
-
-    img {
-      height: 60px;
-    }
+  &:hover {
+    color: var(--color-primary, #818cf8);
+    padding-left: 8px;
   }
 }
 

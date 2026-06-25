@@ -13,32 +13,34 @@
 }
 
 :root {
-  // Color scheme green/purple
+  // Midnight Indigo — Premium Dark Theme
+  --color-primary: #818cf8;
+  --color-secondary: #6366f1;
+  --color-hover: #a5b4fc;
+  --color-primary-rgb: 129, 140, 248;
+  --color-secondary-rgb: 99, 102, 241;
 
-  // --color-primary: #70e61c;
-  // --color-secondary: #9747ff;
-  // --color-hover: #1cdae6;
+  // Backgrounds
+  --color-darkbluebg: #0a0a0f;
+  --color-background: #0a0a0f;
+  --color-backgroundtransparent: rgba(10, 10, 15, 0.92);
+  --color-bg-elevated: #12121a;
+  --color-bg-surface: #1a1a2e;
 
-  // Color scheme lightblue/darkblue
+  // Text hierarchy
+  --color-text-primary: #e4e4e7;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
 
-  --color-primary: #1cdae6;
-  --color-secondary: #4b47ff;
-  --color-hover: #1ce6b6;
+  // Borders
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(255, 255, 255, 0.12);
 
-  // Color scheme dark orange/light orange
+  // Status
+  --color-done: #22c55e;
+  --color-error: #ef4444;
 
-  // --color-primary: #E86F00;
-  // --color-secondary: #FF4747;
-  // --color-hover: #D61CE6;
-
-  // General colors
-  --color-darkbluebg: black;
-  --color-background: black;
-  --color-backgroundtransparent: rgba(20, 29, 47, 0.9);
-  --color-done: #70e61c;
-  --color-error: #e61c40;
-
-  //TODO General font sizes
+  // Font sizes
   --font1: 45px;
   --font2: 32px;
   --font3: 23px;
@@ -57,7 +59,7 @@
     --font4: 23px;
   }
 
-  //Breakpoint
+  // Breakpoints
   --bp-desktop: 1200px;
   --bp-tablet: 768px;
 }
@@ -68,11 +70,14 @@ html {
 
 body {
   background-color: var(--color-background);
-  color: #ffffff;
+  color: var(--color-text-primary);
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  line-height: 120%;
+  line-height: 1.5;
   margin: 0;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 button {
@@ -86,21 +91,26 @@ button {
   border-radius: 10px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   font-size: var(--font4);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-family: 'Poppins', sans-serif;
 }
 
 .main-btn {
   border: 1px solid var(--color-primary);
-  color: black;
+  color: #0a0a0f;
   font-size: var(--font4);
   background: var(--color-primary);
+  font-weight: 600;
 
   &:hover {
-    border: 1px solid var(--color-secondary);
-    padding: 20px 40px;
-    background: var(--color-secondary);
+    border: 1px solid var(--color-hover);
+    background: var(--color-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(var(--color-primary-rgb), 0.4);
   }
 
   &:active {
+    transform: translateY(0);
     border: 1px solid white;
     background: white;
     color: var(--color-secondary);
@@ -111,13 +121,17 @@ button {
   color: #ffffff;
   border: 1px solid var(--color-primary);
   background-color: transparent;
+  font-weight: 600;
 
-  // &:hover {
-  //   border: 1px solid var(--color-primary);
-  //   background: var(--color-primary);
-  // }
+  &:hover {
+    border: 1px solid var(--color-primary);
+    background: rgba(var(--color-primary-rgb), 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(var(--color-primary-rgb), 0.2);
+  }
 
   &:active {
+    transform: translateY(0);
     border: 1px solid white;
     background: white;
     color: var(--color-secondary);
@@ -128,12 +142,18 @@ button {
   color: white;
   border: 1px solid var(--color-secondary);
   background-color: var(--color-secondary);
-  // &:hover {
-  //   border: 1px solid var(--color-primary);
-  //   background: var(--color-primary);
-  // }
+  font-weight: 600;
+
+  &:hover {
+    border: 1px solid var(--color-primary);
+    background: var(--color-primary);
+    color: #0a0a0f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(var(--color-primary-rgb), 0.3);
+  }
 
   &:active {
+    transform: translateY(0);
     border: 1px solid white;
     background: white;
     color: var(--color-secondary);
@@ -304,16 +324,7 @@ app-section-skills {
 
 app-section-title {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 93vh;
-  overflow: hidden;
-
-  @media (min-width: 1200px) {
-    overflow: visible;
-  }
+  display: block;
 }
 
 app-section-icons {
@@ -346,6 +357,7 @@ app-section-contact {
 
   h2 {
     padding-left: 25px;
+
     @media (min-width: 1200px) {
       padding-left: 100px;
       margin-bottom: 25px;
@@ -454,14 +466,17 @@ app-footer {
     opacity: 0%;
     scale: 0;
   }
+
   15% {
     opacity: 100%;
     scale: 1;
   }
+
   85% {
     opacity: 100%;
     scale: 1;
   }
+
   100% {
     opacity: 0%;
     scale: 0;
@@ -478,18 +493,22 @@ app-footer {
     transform-origin: center center;
     animation-timing-function: ease-out;
   }
+
   10% {
     transform: scale(0.91);
     animation-timing-function: ease-in;
   }
+
   17% {
     transform: scale(0.98);
     animation-timing-function: ease-out;
   }
+
   33% {
     transform: scale(0.87);
     animation-timing-function: ease-in;
   }
+
   45% {
     transform: scale(1);
     animation-timing-function: ease-out;
@@ -504,21 +523,27 @@ app-footer {
   0% {
     transform: scale3d(1, 1, 1);
   }
+
   30% {
     transform: scale3d(1.25, 0.75, 1);
   }
+
   40% {
     transform: scale3d(0.75, 1.25, 1);
   }
+
   50% {
     transform: scale3d(1.15, 0.85, 1);
   }
+
   65% {
     transform: scale3d(0.95, 1.05, 1);
   }
+
   75% {
     transform: scale3d(1.05, 0.95, 1);
   }
+
   100% {
     transform: scale3d(1, 1, 1);
   }
@@ -533,6 +558,7 @@ app-footer {
     transform: scale(0.75);
     transform-origin: 0% 50%;
   }
+
   100% {
     transform: scale(1);
     transform-origin: 0% 50%;
@@ -547,6 +573,7 @@ app-footer {
   0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -565,6 +592,7 @@ app-footer {
     transform: translateX(-1000px);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -611,14 +639,17 @@ app-footer {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 @keyframes fade-in {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }

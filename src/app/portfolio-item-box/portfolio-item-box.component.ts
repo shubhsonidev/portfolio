@@ -17,6 +17,7 @@ export class PortfolioItemBoxComponent implements OnInit {
     private portfolioService: PortfolioService,
     private scrollService: ScrollService
   ) {}
+  
   scrollToContact(): void {
     this.scrollService.scrollToContact();
   }
@@ -25,23 +26,13 @@ export class PortfolioItemBoxComponent implements OnInit {
     this.portfolioItems = this.portfolioService.getPortfolio();
   }
 
-  openPortfolioItem(input: number) {
-    const item = document.getElementById('portfolioitem' + input);
-    const itemdetail = document.getElementById('portfolioitemdetail' + input);
-
-    if (item != null && itemdetail != null) {
-      item.classList.add('d-none');
-      itemdetail.classList.remove('d-none');
-    }
-  }
-
-  closePortfolioItem(input: number) {
-    const item = document.getElementById('portfolioitem' + input);
-    const itemdetail = document.getElementById('portfolioitemdetail' + input);
-
-    if (item != null && itemdetail != null) {
-      item.classList.remove('d-none');
-      itemdetail.classList.add('d-none');
-    }
+  onMouseMove(event: MouseEvent) {
+    const target = event.currentTarget as HTMLElement;
+    const rect = target.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    
+    target.style.setProperty('--mouse-x', `${x}px`);
+    target.style.setProperty('--mouse-y', `${y}px`);
   }
 }

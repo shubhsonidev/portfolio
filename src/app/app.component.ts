@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ImprintService } from './services/imprint.service';
-import { ScrollService } from './services/scroll.service';
 import AOS from 'aos';
 
 @Component({
@@ -13,7 +12,7 @@ showImprint: boolean;
 shutImprint: boolean;
 
 
-constructor (private scrollService: ScrollService, private imprintService: ImprintService) {
+constructor (private imprintService: ImprintService) {
 
 }
 
@@ -25,9 +24,5 @@ ngOnInit(): void {
   this.imprintService.shutImprint.subscribe((value) => {
     this.shutImprint = value;
   });
-}
-
-scrollToBottom(): void {
-  this.scrollService.scrollToBottom();
 }
 }

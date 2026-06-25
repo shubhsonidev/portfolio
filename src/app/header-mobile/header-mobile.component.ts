@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ImprintService } from '../services/imprint.service';
 import { ScrollService } from '../services/scroll.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
@@ -24,7 +25,11 @@ export class HeaderMobileComponent {
   iconClose: string = 'https://shubhsonidev.github.io/portfolio/assets/img/icons/mobilemenu-close-final.png';
   iconHeader: any = this.iconMenu;
 
-  constructor(private scrollService: ScrollService, private imprintService: ImprintService) {}
+  constructor(
+    private scrollService: ScrollService,
+    private imprintService: ImprintService,
+    private router: Router
+  ) {}
 
   toggleMobileNav() {
     this.displayMobileNav = !this.displayMobileNav;
@@ -42,7 +47,13 @@ export class HeaderMobileComponent {
   }
 
   scrollToTop(): void {
-    this.scrollService.scrollToTop();
+    if (this.router.url === '/' || this.router.url === '') {
+      this.scrollService.scrollToTop();
+    } else {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => this.scrollService.scrollToTop(), 500);
+      });
+    }
     this.closeImprint();
   }
 

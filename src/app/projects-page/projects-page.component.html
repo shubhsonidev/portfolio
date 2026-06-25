@@ -1,0 +1,20 @@
+<section class="projects-page-section">
+  <div class="projects-page-header" data-aos="fade-up" data-aos-duration="800">
+    <a routerLink="/" class="back-link">
+      <span class="back-arrow">←</span> Back to Home
+    </a>
+    <h2>All Projects</h2>
+    <p>
+      A complete collection of my work — from fintech platforms and e-commerce
+      apps to developer tools and real-time systems.
+    </p>
+  </div>
+
+  <div class="projects-grid" data-aos="fade-up" data-aos-duration="1000">
+    <app-portfolio-item-box
+      *ngFor="let item of portfolio; let i = index"
+      [portfolioItem]="item"
+      [index]="i"
+    ></app-portfolio-item-box>
+  </div>
+</section>

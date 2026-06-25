@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { PortfolioService } from '../services/portfolio.service';
 import { ScrollService } from '../services/scroll.service';
@@ -10,6 +10,8 @@ import { ScrollService } from '../services/scroll.service';
 })
 export class SectionPortfolioComponent implements OnInit, AfterViewInit, OnDestroy{
   portfolio: any = [];
+  @Input() limit: number = 0;
+  @Input() showViewAll: boolean = false;
   @ViewChild('portfolioSection', { static: true }) target: ElementRef;
   private subscription: Subscription;
 
@@ -21,7 +23,7 @@ export class SectionPortfolioComponent implements OnInit, AfterViewInit, OnDestr
 
   ngAfterViewInit() {
     this.subscription = this.scrollService.scrollToPortfolioSection$.subscribe(() => {
-      const elementPosition = getOffset(this.target.nativeElement); // Use helper function to get position
+      const elementPosition = this.target.nativeElement.getBoundingClientRect().top + window.scrollY;
       const adjustment = 150;
       window.scrollTo({ top: elementPosition - adjustment, behavior: 'smooth' });
     });
@@ -35,7 +37,11 @@ export class SectionPortfolioComponent implements OnInit, AfterViewInit, OnDestr
   }
 
   getPortfolioItems() {
-    this.portfolio = this.portfolioItemService.getPortfolio();
+    if (this.limit > 0) {
+      this.portfolio = this.portfolioItemService.getFeaturedPortfolio();
+    } else {
+      this.portfolio = this.portfolioItemService.getPortfolio();
+    }
   }
 }
 

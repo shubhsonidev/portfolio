@@ -1,183 +1,174 @@
 import { Injectable } from '@angular/core';
 
+export interface PortfolioItem {
+  mainImage: string;
+  backgroundImage?: string;
+  gitLink?: string;
+  liveLink?: string;
+  backendLink?: string;
+  title: string;
+  description?: string;
+  tags?: string[];
+  featured?: boolean;
+  contact?: boolean;
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class PortfolioService {
-  portfolioitems: any = [
+  portfolioitems: PortfolioItem[] = [
     {
       mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/app.jpeg',
-      // backgroundImage:
-      //   'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/libac.png',
-      // gitLink: 'https://github.com/shubhsonidev/linkerly',
       liveLink:
         'https://play.google.com/store/apps/details?id=com.haridarshanjewellers.app&pcampaignid=web_share',
-      // backendLink: 'https://jewe-billing-backend.vercel.app/',
-      title: 'APP for Jewellery ratailers',
-    },
-    {
-      mainImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/loyalty.jpeg',
-
-      title: 'Loyalty Management',
-      contact: true,
-      // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
-      tags: ['Angular', 'API', 'HTML5', 'CSS'],
+      title: 'APP for Jewellery Retailers',
+      description:
+        'A cross-platform mobile app tailored for jewellery retailers — published on Google Play Store. Built with Angular and Capacitor for a native-like experience.',
+      tags: ['Angular', 'Capacitor', 'TypeScript', 'Mobile'],
+      featured: true,
     },
     {
       mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/docit.png',
-      // backgroundImage:
-      //   'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/libac.png',
-      // gitLink: 'https://github.com/shubhsonidev/linkerly',
       liveLink: 'https://documentit.netlify.app/',
-      // backendLink: 'https://jewe-billing-backend.vercel.app/',
-      title: 'DOCIT- No Code Documentation Webapp',
-      // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
-      tags: ['Angular', 'API', 'HTML5', 'CSS'],
-    },
-    {
-      mainImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/jewel.png',
-      // backgroundImage:
-      //   'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/libac.png',
-      // gitLink: 'https://github.com/shubhsonidev/linkerly',
-      // liveLink: 'https://jewe-billing-backend.vercel.app/',
-      backendLink: 'https://jewe-billing-backend.vercel.app/',
-      title: 'JEWELERA - Jewellery billing backend',
-      // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
-      tags: ['Angular', 'API', 'HTML5', 'CSS'],
+      title: 'DOCIT — No Code Documentation',
+      description:
+        'A web app that makes creating and sharing documents effortless and interactive. No syntax needed — users focus entirely on content while DOCIT handles formatting.',
+      tags: ['Angular', 'TypeScript', 'REST API'],
+      featured: true,
     },
     {
       mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/gappemaro.png',
-      // backgroundImage:
-      //   'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/libac.png',
-      // gitLink: 'https://github.com/shubhsonidev/linkerly',
       liveLink: 'https://gappe-maro.netlify.app/login',
-      title: 'GappeMaro - Retro Chatting Webapp',
-      // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
-      tags: ['Angular', 'API', 'HTML5', 'CSS'],
+      title: 'GappeMaro — Retro Chat App',
+      description:
+        'A real-time retro-themed chatting web application with authentication, live messaging, and a nostalgic UI design.',
+      tags: ['Angular', 'Node.js', 'WebSocket', 'MongoDB'],
+      featured: true,
     },
-
     {
       mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/limo.png',
-      backgroundImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/libac.png',
       gitLink: 'https://github.com/shubhsonidev/linkerly',
       liveLink: 'https://linkerly.netlify.app/main',
-      title: 'Linkerly - Link Shortening Service',
-      // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
-      tags: ['Angular', 'API', 'HTML5', 'CSS'],
-    },
-    {
-      mainImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/tech.png',
-      backgroundImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/tech1.png',
-      gitLink: 'https://github.com/shubhsonidev/techshorts',
-      liveLink: 'https://techieshorts.netlify.app/',
-      title: 'TechShorts - 20 words news',
-      // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
-      tags: ['Javascript', 'React', 'API', 'HTML5', 'CSS'],
-    },
-
-    {
-      mainImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/ratechecker.png',
-      backgroundImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/rate.png',
-      gitLink: 'https://github.com/shubhsonidev/rates-webapp/',
-      liveLink: 'https://metalrates.netlify.app/',
-      title: 'Gold & Silver Rates Webapp',
-      // description: 'This Webapp shows Real-Time rates of Gold and Silver. It is purely made for retailers for increasing Customer Relations.',
-      tags: ['Javascript', 'API', 'HTML5', 'CSS'],
-    },
-    {
-      mainImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/portfolio.png',
-      backgroundImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/port.png',
-      gitLink: 'https://github.com/shubhsonidev/portfolio',
-      liveLink: 'https://shubhsonidev.github.io/portfolio/',
-      title: 'Portfolio',
-      // description: '',
-      tags: ['Angular', 'Typescript', 'API', 'HTML', 'CSS'],
+      title: 'Linkerly — Link Shortener',
+      description:
+        'A URL shortening service that generates compact, shareable links with click tracking and analytics.',
+      tags: ['Angular', 'REST API', 'TypeScript'],
+      featured: true,
     },
     {
       mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/byajbook_webapp.png',
-      backgroundImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/byajbook_00.png',
-      // gitLink: '',
       liveLink: 'https://byaj.app/login',
-      title: 'Byajbook Webapp',
-      // description: '"Byajbook" is a software which manages informal loans.',
-      tags: ['Angular', 'Typescript', 'HTML', 'CSS'],
+      title: 'ByajBook Webapp',
+      description:
+        'Web platform for a 100X VC-backed fintech startup that simplifies credit and informal loan management for individuals and businesses.',
+      tags: ['Angular', 'TypeScript', 'REST API', 'SCSS'],
+      featured: true,
+    },
+    {
+      mainImage:
+        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/loyalty.jpeg',
+      title: 'Loyalty Management System',
+      description:
+        'A comprehensive loyalty management platform for gold and silver retailers implementing 11+1 schemes.',
+      tags: ['Angular', 'REST API', 'HTML5', 'CSS'],
+      contact: true,
+    },
+    {
+      mainImage:
+        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/jewel.png',
+      backendLink: 'https://jewe-billing-backend.vercel.app/',
+      title: 'JEWELERA — Billing Backend',
+      description:
+        'A robust backend system for jewellery billing and inventory management, deployed on Vercel.',
+      tags: ['Node.js', 'Express', 'MongoDB', 'REST API'],
+    },
+    {
+      mainImage:
+        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/tech.png',
+      gitLink: 'https://github.com/shubhsonidev/techshorts',
+      liveLink: 'https://techieshorts.netlify.app/',
+      title: 'TechShorts — 20 Word News',
+      description:
+        'A news aggregator that summarizes tech articles into ultra-short 20-word snippets for quick consumption.',
+      tags: ['React', 'JavaScript', 'News API'],
+    },
+    {
+      mainImage:
+        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/ratechecker.png',
+      gitLink: 'https://github.com/shubhsonidev/rates-webapp/',
+      liveLink: 'https://metalrates.netlify.app/',
+      title: 'Gold & Silver Rates',
+      description:
+        'Real-time gold and silver rate tracker for jewellery retailers to enhance customer relations.',
+      tags: ['JavaScript', 'REST API', 'HTML5', 'CSS'],
     },
     {
       mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/byajbook_website.png',
-      backgroundImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/byajbook_01.png',
-      // gitLink: 'https://github.com/christian-hansen/portfolio-website',
       liveLink: 'https://byajbook.com/',
-      title: 'Byajbook Website',
-      // description: '"Byajbook" is a software which manages informal loans.',
-      tags: ['Angular', 'Typescript', 'HTML', 'CSS'],
+      title: 'ByajBook Website',
+      description:
+        'Marketing and product showcase website for ByajBook — the fintech startup simplifying informal lending.',
+      tags: ['Angular', 'TypeScript', 'SCSS'],
     },
     {
       mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/fivefilter_website.png',
-      backgroundImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/fivefilter_00.png',
-      // gitLink: '',
       liveLink: 'https://fivefilter.com/',
-      title: 'FiveFiter eSports Website',
-      // description: '"FiveFiter eSports" is an Indian esports performance brand, laser-focused on seeking out, leveling up, and amplifying gamers and creators.',
+      title: 'FiveFilter eSports Website',
+      description:
+        'Brand website for an Indian esports performance company focused on discovering and amplifying gamers and creators.',
       tags: ['Angular', 'HTML', 'CSS'],
     },
-
     {
       mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/fivefilter_webapp.png',
-      backgroundImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/fivefilter_01.png',
-      // gitLink: '',
       liveLink: 'https://fivefilter.com/',
-      title: 'ESports Tournament Manager',
-      // description: 'This is Discord based SAAS manager which helps eSports in maintaining and organising Tournaments with realtime-results and smooth conduction of tournament.',
-      tags: ['Angular', 'Typescript', 'API', 'Discord Bots'],
+      title: 'eSports Tournament Manager',
+      description:
+        'A Discord-integrated SaaS platform for organizing esports tournaments with real-time results and automated workflows.',
+      tags: ['Angular', 'TypeScript', 'Discord Bots', 'Node.js'],
     },
     {
       mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/mahi925_website.png',
-      backgroundImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/mahi925_00.png',
-      // gitLink: '',
-      // liveLink: '',
       title: 'Mahi925 Silver Website',
-      // description: '"Mahi925 Silver" is brand which showcases a wide variety of modern and fashionable Silver jewellery',
+      description:
+        'E-commerce showcase website for a silver jewellery brand featuring modern, fashionable designs.',
       tags: ['Angular', 'HTML', 'CSS'],
     },
-
     {
       mainImage:
         'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/scheme.png',
-      backgroundImage:
-        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/scheme_00.png',
-      // gitLink: '',
-      // liveLink: '',
-      title: '11+1 Gold scheme Management',
-      // description: 'This Webapp maintains 11+1 scheme which is widely used by gold and silver retailers.',
-      tags: ['Javascript', 'Appscript', 'API', 'HTML5', 'CSS'],
+      title: '11+1 Gold Scheme Manager',
+      description:
+        'A web app for managing the popular 11+1 gold savings scheme used by jewellery retailers across India.',
+      tags: ['JavaScript', 'App Script', 'REST API'],
+    },
+    {
+      mainImage:
+        'https://shubhsonidev.github.io/portfolio/assets/img/portfolio/portfolio.png',
+      gitLink: 'https://github.com/shubhsonidev/portfolio',
+      liveLink: 'https://shubhsonidev.github.io/portfolio/',
+      title: 'Portfolio Website',
+      description:
+        'This very portfolio — built with Angular, SCSS, and AOS animations.',
+      tags: ['Angular', 'TypeScript', 'SCSS'],
     },
   ];
   constructor() {}
 
-  getPortfolio() {
+  getPortfolio(): PortfolioItem[] {
     return this.portfolioitems;
+  }
+
+  getFeaturedPortfolio(): PortfolioItem[] {
+    return this.portfolioitems.filter((item) => item.featured);
   }
 }

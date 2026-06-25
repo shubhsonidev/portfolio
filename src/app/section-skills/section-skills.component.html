@@ -12,23 +12,28 @@
   data-aos-duration="1000"
 >
   <div class="skills-intro">
-    <h2>My skills</h2>
+    <h2>Tech Stack</h2>
     <div>
-      I have gained experience in building projects with various front end
-      technologies and concepts.
+      I've built production applications with a diverse set of technologies
+      across the full stack.
     </div>
     <div class="btn-container hidemobile">
       <button class="main-btn" (click)="scrollToContact()">Get in touch</button>
     </div>
   </div>
   <div
-    class="skills-icons-container"
+    class="skills-categories-container"
     data-aos="fade-up"
     data-aos-duration="1000"
   >
-    <div class="skill-item" *ngFor="let skill of skills">
-      <img src="{{ skill['logo'] }}" alt="{{ skill['description'] }} icon" />
-      <div>{{ skill["description"] }}</div>
+    <div class="skill-category" *ngFor="let category of skillCategories">
+      <h4 class="category-title">{{ category.category }}</h4>
+      <div class="category-divider"></div>
+      <ul class="skill-list">
+        <li *ngFor="let skill of category.skills" class="skill-list-item">
+          {{ skill }}
+        </li>
+      </ul>
     </div>
   </div>
   <div class="btn-container hidedesktop">

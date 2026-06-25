@@ -1,45 +1,34 @@
-<div>
-  <div class="portfolio-item" style="overflow: hidden">
-    <!-- Portfolio item default view -->
+<div class="portfolio-card" (mousemove)="onMouseMove($event)" data-aos="zoom-in-up" data-aos-duration="1000" [attr.data-aos-delay]="(index % 3) * 150">
+  <div class="image-wrapper">
     <img
       id="portfolioitem{{ index }}"
-      (mouseover)="openPortfolioItem(index)"
       class="portfolio-image fade-in"
       src="{{ portfolioItem.mainImage }}"
       alt="{{ portfolioItem['title'] }} image"
+      loading="lazy"
     />
-
-    <!-- Portfolio item detailed view -->
-    <!-- <div
-      id="portfolioitemdetail{{ index }}"
-      (mouseleave)="closePortfolioItem(index)"
-      class="portfolio-item-detail d-none fade-in"
-      style="background-image: url({{
-        portfolioItem.backgroundImage
-      }}); background-position: top; background-size: contain; filter: brightness(100%)"
-    >
-      <div class="background-container"></div>
-    </div> -->
   </div>
+  
   <div class="infos-container">
-    <h3 style="text-align: center; line-height: 2rem">
+    <h3 class="card-title">
       {{ portfolioItem.title }}
     </h3>
 
-    <!-- <p>{{ portfolioItem.description }}</p> -->
-    <!-- <div class="tag-container">
-      <div *ngFor="let tag of portfolioItem.tags; let j = index">
-        {{ tag }}
-        <span *ngIf="j < portfolioItem.tags.length - 1"> |</span>
-      </div>
-    </div> -->
-    <div class="btn-container" style="gap: 1rem">
+    <p class="card-description" *ngIf="portfolioItem.description">
+      {{ portfolioItem.description }}
+    </p>
+
+    <div class="card-tags" *ngIf="portfolioItem.tags && portfolioItem.tags.length">
+      <span class="tag" *ngFor="let tag of portfolioItem.tags">{{ tag }}</span>
+    </div>
+
+    <div class="btn-container card-actions">
       <a
         *ngIf="portfolioItem.gitLink"
         [href]="portfolioItem.gitLink"
         target="_blank"
       >
-        <button class="secondary-btn">Github</button>
+        <button class="secondary-btn small-btn">Github</button>
       </a>
 
       <a
@@ -47,7 +36,7 @@
         [href]="portfolioItem.backendLink"
         target="_blank"
       >
-        <button class="tertiary-btn">Backend Live</button>
+        <button class="tertiary-btn small-btn">Backend Live</button>
       </a>
 
       <a
@@ -55,14 +44,14 @@
         [href]="portfolioItem.liveLink"
         target="_blank"
       >
-        <button class="tertiary-btn">Live Link</button>
+        <button class="tertiary-btn small-btn">Live Link</button>
       </a>
+      
       <a
         *ngIf="portfolioItem.contact"
         (click)="scrollToContact()"
-        target="_blank"
       >
-        <button class="tertiary-btn">Contact For Demo</button>
+        <button class="tertiary-btn small-btn">Contact For Demo</button>
       </a>
     </div>
   </div>

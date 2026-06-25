@@ -1,0 +1,33 @@
+<section class="experience-section" data-aos="fade-up" data-aos-duration="1000">
+  <div class="experience-header">
+    <h2>Experience</h2>
+    <p>My professional journey so far.</p>
+  </div>
+
+  <div class="timeline">
+    <div
+      class="timeline-item"
+      *ngFor="let exp of experiences; let i = index"
+      data-aos="fade-up"
+      data-aos-duration="800"
+      [attr.data-aos-delay]="i * 100"
+    >
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-meta">
+          <span class="timeline-period">{{ exp.period }}</span>
+          <span class="timeline-duration" *ngIf="exp.duration">·  {{ exp.duration }}</span>
+          <span class="timeline-type" *ngIf="exp.type">·  {{ exp.type }}</span>
+        </div>
+        <h3 class="timeline-role">{{ exp.role }}</h3>
+        <div class="timeline-company">{{ exp.company }}</div>
+        <p class="timeline-description" *ngIf="exp.description">
+          {{ exp.description }}
+        </p>
+        <div class="timeline-skills" *ngIf="exp.skills && exp.skills.length">
+          <span class="skill-tag" *ngFor="let skill of exp.skills">{{ skill }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

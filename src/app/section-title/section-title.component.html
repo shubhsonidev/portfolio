@@ -1,39 +1,69 @@
-<img
-  class="bg-shape"
-  src="https://shubhsonidev.github.io/portfolio/assets/img/bg/bg1.png"
-  alt=""
-/>
-<div class="fullcontainer">
-  <div class="image-container">
-    <div class="bg-colors-container">
-      <img class="bg-colors" style="margin-left: 3%" src="{{ bgLeft }}" />
-      <img class="bg-colors" style="margin-right: 3%" src="{{ bgRight }}" />
-    </div>
+<div class="hero-section">
+  <!-- Background glow blobs -->
+  <div class="hero-glow hero-glow--left"></div>
+  <div class="hero-glow hero-glow--right"></div>
 
-    <img
-      class="titleimage"
-      src="https://shubhsonidev.github.io/portfolio/assets/img/shubh.png"
-      alt="Shubh Soni"
-    />
-  </div>
+  <img class="bg-shape" src="https://shubhsonidev.github.io/portfolio/assets/img/bg/bg1.png" alt="" />
 
-  <div
-    data-aos="fade-up"
-    data-aos-duration="1000"
-    class="section-title-container"
-  >
-    <div class="title-btn-container">
-      <div class="title-container">
-        <div class="title-vertical">I am</div>
-        <div class="title-horizontal">
-          <div class="myname">Shubh Soni</div>
-          <div class="jobtitle">Fullstack Developer</div>
+  <div class="hero-content">
+    <!-- Top: Text -->
+    <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+      <div class="hero-heading mt-5">
+        <div class="greeting">Hi, I'm</div>
+        <h1 class="hero-name">Shubh Soni</h1>
+        <div class="hero-role" [class.title-fading]="titleFading">
+          {{ currentTitle }}
         </div>
       </div>
-      <div class="btn-container margin">
-        <button class="main-btn" (click)="scrollToContact()">
-          Let's Connect
-        </button>
+      <p class="hero-tagline">
+        I specialize in building high-performance web applications, leveraging my experience with fintech platforms
+        (used
+        by over 350k users) and
+        complex software to solve diverse real-world problems.
+      </p>
+      <div class="hero-actions">
+        <div class="cta-wrapper" (click)="scrollToPortfolio()">
+          <button class="hero-cta">
+            <span class="cta-text">View My Work</span>
+            <svg class="cta-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 5v14" />
+              <path d="m19 12-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom: Interactive Terminal -->
+    <div class="terminal" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" (click)="focusInput()">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot dot--red"></span>
+          <span class="dot dot--yellow"></span>
+          <span class="dot dot--green"></span>
+        </div>
+        <span class="terminal-title">shubh@dev ~ </span>
+      </div>
+      <div class="terminal-body" #terminalBody>
+        <div *ngFor="let line of terminalLines; let i = index" class="terminal-line" [class.visible]="line.visible"
+          [class.command]="line.type === 'command'" [class.output]="line.type === 'output'"
+          [class.blank]="line.type === 'blank'" [class.error]="line.type === 'error'"
+          [class.header]="line.type === 'header'">
+          {{ line.text }}
+        </div>
+        <!-- Interactive input line -->
+        <div class="terminal-input-line" *ngIf="isTerminalReady">
+          <span class="cursor-prompt">$</span>
+          <input #terminalInput type="text" class="terminal-text-input" [(ngModel)]="currentInput"
+            (keydown.enter)="executeCommand($event)" (keydown)="onKeyDown($event)" spellcheck="false" autocomplete="off"
+            placeholder="type 'help' for commands..." />
+        </div>
+        <!-- Boot cursor (before interactive mode) -->
+        <div class="terminal-cursor" *ngIf="!isTerminalReady">
+          <span class="cursor-prompt">$</span>
+          <span class="cursor-blink">▊</span>
+        </div>
       </div>
     </div>
   </div>

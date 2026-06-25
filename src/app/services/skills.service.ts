@@ -1,75 +1,61 @@
 import { Injectable } from '@angular/core';
 
+export interface SkillCategory {
+  category: string;
+  skills: string[];
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class SkillsService {
-  skills: any = [
+  private skillCategories: SkillCategory[] = [
     {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/angular-big.png',
-      description: 'Angular',
+      category: 'Frontend',
+      skills: [
+        'Angular',
+        'React',
+        'TypeScript',
+        'JavaScript',
+        'HTML5',
+        'CSS3 / SCSS',
+        'Tailwind CSS',
+        'Flutter',
+      ],
     },
     {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/react.png',
-      description: 'React',
+      category: 'Backend',
+      skills: [
+        'Node.js',
+        'Express.js',
+        'MongoDB',
+        'REST APIs',
+        'Firebase',
+      ],
     },
     {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/node.png',
-      description: 'Node.js',
-    },
-    {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/express.png',
-      description: 'Express.js',
-    },
-    {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/redux.png',
-      description: 'Redux.js',
-    },
-    {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/mongodb.png',
-      description: 'MongoDB',
-    },
-    {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/typescript-big.png',
-      description: 'Typescript',
-    },
-    {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/javascript-big.png',
-      description: 'Javascript',
-    },
-    {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/html5-big.png',
-      description: 'HTML5',
-    },
-    {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/api-big.png',
-      description: 'API',
-    },
-    {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/css-big.png',
-      description: 'CSS',
-    },
-    {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/material-design-big.png',
-      description: 'Material Design',
-    },
-    {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/git.png',
-      description: 'GIT',
-    },
-    {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/flu.png',
-      description: 'Flutter',
-    },
-    {
-      logo: 'https://shubhsonidev.github.io/portfolio/assets/img/icons/appscript.png',
-      description: 'App Script',
+      category: 'Tools & Others',
+      skills: [
+        'Git & GitHub',
+        'Capacitor',
+        'Material Design',
+        'Redux',
+        'App Script',
+        'Figma',
+      ],
     },
   ];
 
   constructor() {}
 
-  getSkills() {
-    return this.skills;
+  getSkillCategories(): SkillCategory[] {
+    return this.skillCategories;
+  }
+
+  // Keep backward compatibility
+  getSkills(): any[] {
+    return this.skillCategories.flatMap((cat) =>
+      cat.skills.map((s) => ({ description: s }))
+    );
   }
 }

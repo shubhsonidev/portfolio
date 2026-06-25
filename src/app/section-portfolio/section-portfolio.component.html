@@ -35,7 +35,27 @@
 </div>
 
 <div
+  *ngIf="showViewAll"
   style="
+    margin-top: 60px;
+    margin-bottom: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  "
+>
+  <div class="btn-container">
+    <a routerLink="/projects">
+      <button type="button" class="awesome-btn">View All Projects →</button>
+    </a>
+  </div>
+</div>
+
+<div
+  *ngIf="!showViewAll"
+  style="
+    margin-top: 60px;
     margin-bottom: 80px;
     width: 100%;
     display: flex;
@@ -45,10 +65,11 @@
 >
   <div class="btn-container">
     <a href="https://github.com/shubhsonidev?tab=repositories" target="_blank">
-      <button type="submit" class="main-btn">View More Projects</button>
+      <button type="button" class="awesome-btn">View GitHub Repos →</button>
     </a>
   </div>
 </div>
+
 <img
   class="portfolio-bg-form-top"
   src="https://shubhsonidev.github.io/portfolio/assets/img/bg/darkblue-shadow-left.png"

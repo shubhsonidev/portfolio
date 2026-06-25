@@ -16,7 +16,7 @@ export class SectionAboutComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit() {
     this.subscription = this.scrollService.scrollToAboutSection$.subscribe(
       () => {
-        const elementPosition = this.target.nativeElement.offsetTop; // Get the top position of the element
+        const elementPosition = this.target.nativeElement.getBoundingClientRect().top + window.scrollY; // Get the absolute top position of the element
         const adjustment = 150; // Set your adjustment value
         window.scrollTo({
           top: elementPosition - adjustment,

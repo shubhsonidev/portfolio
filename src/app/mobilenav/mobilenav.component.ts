@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { ImprintService } from '../services/imprint.service';
 import { ScrollService } from '../services/scroll.service';
 
@@ -14,43 +15,53 @@ export class MobilenavComponent {
 @Output() linkClick = new EventEmitter<void>();
 
 
-  constructor(private scrollService: ScrollService, private imprintService: ImprintService) {}
+  constructor(
+    private scrollService: ScrollService,
+    private imprintService: ImprintService,
+    private router: Router
+  ) {}
 
+  private navigateAndScroll(scrollFn: () => void): void {
+    if (this.router.url === '/' || this.router.url === '') {
+      scrollFn();
+    } else {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => scrollFn(), 500);
+      });
+    }
+    this.toggleMobileNav();
+    this.closeImprint();
+  }
 
   toggleMobileNav() {
     this.linkClick.emit();
   }
 
   scrollToContact(): void {
-    this.scrollService.scrollToContact();
-    this.toggleMobileNav();
-    this.closeImprint();
+    this.navigateAndScroll(() => this.scrollService.scrollToContact());
   }
 
   scrollToPortfolio(): void {
-    this.scrollService.scrollToPortfolio();
-    this.toggleMobileNav();
-    this.closeImprint();
+    this.navigateAndScroll(() => this.scrollService.scrollToPortfolio());
   }
 
   scrollToSkills(): void {
-    // this.scrollService.scrollToSkills();
-    window.scrollTo({
-      top: 1980,
-      behavior: 'smooth',
-    });
-    this.toggleMobileNav();
-    // this.closeImprint();
+    this.navigateAndScroll(() => this.scrollService.scrollToSkills());
   }
 
   scrollToAbout(): void {
-    this.scrollService.scrollToAbout();
-    this.toggleMobileNav();
-    this.closeImprint();
+    this.navigateAndScroll(() => this.scrollService.scrollToAbout());
   }
 
   scrollToTop(): void {
-    this.scrollService.scrollToTop();
+    if (this.router.url === '/' || this.router.url === '') {
+      this.scrollService.scrollToTop();
+    } else {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => this.scrollService.scrollToTop(), 500);
+      });
+    }
+    this.toggleMobileNav();
     this.closeImprint();
   }
 

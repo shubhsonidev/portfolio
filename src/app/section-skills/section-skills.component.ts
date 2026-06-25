@@ -7,9 +7,8 @@ import {
   OnInit,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Data } from '@angular/router';
 import { ScrollService } from '../services/scroll.service';
-import { SkillsService } from '../services/skills.service';
+import { SkillsService, SkillCategory } from '../services/skills.service';
 
 
 @Component({
@@ -18,7 +17,7 @@ import { SkillsService } from '../services/skills.service';
   styleUrls: ['./section-skills.component.scss'],
 })
 export class SectionSkillsComponent implements AfterViewInit, OnDestroy, OnInit {
-  skills: any = [];
+  skillCategories: SkillCategory[] = [];
   @ViewChild('skillsSection', { static: true }) target: ElementRef;
   private subscription: Subscription;
 
@@ -36,12 +35,12 @@ export class SectionSkillsComponent implements AfterViewInit, OnDestroy, OnInit 
   ngAfterViewInit() {
     this.subscription = this.scrollService.scrollToSkillsSection$.subscribe(
       () => {
-        const elementPosition = this.target.nativeElement.offsetTop; // Get the top position of the element
-        const adjustment = 150; // Set your adjustment value
+        const elementPosition = this.target.nativeElement.getBoundingClientRect().top + window.scrollY;
+        const adjustment = 150;
         window.scrollTo({
           top: elementPosition - adjustment,
           behavior: 'smooth',
-        }); // Scroll to the adjusted position
+        });
       }
     );
   }
@@ -53,10 +52,6 @@ export class SectionSkillsComponent implements AfterViewInit, OnDestroy, OnInit 
   }
 
   ngOnInit(): void {
-    this.getSkills();
-  }
-
-  getSkills(): void {
-    this.skills = this.skillService.getSkills();
+    this.skillCategories = this.skillService.getSkillCategories();
   }
 }

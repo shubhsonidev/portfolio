@@ -39,6 +39,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: stretch; /* Forces equal height for cards in a row */
   }
 
   @media (min-width: 1440px) {
@@ -100,5 +101,94 @@
     div {
       gap: 8px;
     }
+  }
+}
+
+.awesome-btn {
+  position: relative;
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  /* Added delicate glass border */
+  border-radius: 9999px;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* The actual gradient shadow/glow element */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(90deg,
+        #818cf8,
+        #6366f1,
+        #a78bfa,
+        #818cf8);
+    border-radius: 9999px;
+    background-size: 300% 100%;
+    animation: glow-pan 4s linear infinite;
+    filter: blur(14px);
+    opacity: 0.6;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+
+  /* Inner dark body */
+  &::after {
+    content: '';
+    position: absolute;
+    /* Inset to allow border of parent to show clearly */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(15, 15, 15);
+    /* Changed to fit closer to the site's dark slate/black palette */
+    border-radius: 9999px;
+    z-index: -1;
+    transition: background-color 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.3);
+
+    &::before {
+      opacity: 1;
+      filter: blur(24px);
+    }
+
+    &::after {
+      background-color: rgb(25, 25, 25);
+    }
+  }
+
+  &:active {
+    transform: translateY(1px);
+
+    &::before {
+      filter: blur(10px);
+      opacity: 0.8;
+    }
+  }
+}
+
+@keyframes glow-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
   }
 }

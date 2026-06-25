@@ -23,6 +23,10 @@ import { SuccessMessageComponent } from './contact-form/success-message/success-
 import { ImprintComponent } from './imprint/imprint.component';
 import { MobilenavComponent } from './mobilenav/mobilenav.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { ProjectsPageComponent } from './projects-page/projects-page.component';
+import { SectionExperienceComponent } from './section-experience/section-experience.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +45,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     SuccessMessageComponent,
     ImprintComponent,
     MobilenavComponent,
+    HomeComponent,
+    ProjectsPageComponent,
+    SectionExperienceComponent,
   ],
   imports: [
     BrowserModule,

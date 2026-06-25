@@ -351,24 +351,22 @@
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    img {
-      width: 20px;
-      height: 20px;
-      opacity: 0.7;
+    svg {
       transition: all 0.3s ease;
-      filter: brightness(0) invert(1);
     }
 
     &:hover {
       background: rgba(99, 102, 241, 0.1);
       border-color: var(--color-primary, #6366f1);
+      color: #fff;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
 
-      img {
-        opacity: 1;
+      svg {
         transform: scale(1.1);
       }
     }

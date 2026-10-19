@@ -53,7 +53,6 @@ export class ExperienceService {
       company: 'ByajBook',
       period: 'Oct 2021 – Dec 2023',
       duration: '2 yrs 3 mos',
-      type: 'Full-time',
       description:
         'Built web app and website for a 100X VC-backed fintech startup making credit and finance management simpler. Developed the flagship web platform using Angular.',
       skills: ['Angular', 'Angular Material', 'TypeScript', 'REST APIs'],
@@ -63,7 +62,6 @@ export class ExperienceService {
       company: 'FF Esports',
       period: 'Jul 2023 – Nov 2023',
       duration: '5 mos',
-      type: 'Full-time · Remote',
       description:
         'Led development of a comprehensive esports tournament management platform. Integrated advanced Discord bot functionality to automate tournament processes.',
       skills: ['Angular', 'Discord Bots', 'Node.js', 'API Integration'],
